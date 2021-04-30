@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="box">test单个行内样式设置</div>
+        <div id="con">test2多个行内样式设置</div>
+    </div>
+    <!-- 
+        CSS样式设置的三种方式:
+            1.行内样式设置,直接在标签上设置 css 样式
+                在标签的style属性中, 设置css样式
+            2.嵌入样式设置,在head标签的style标签中, 设置 css 样式
+                在style标签中, 设置css样式
+            3.引入样式设置,css样式设置在一个css文件中, 通过link标签在head标签中引入该css文件
+
+        jQuery样式操作:
+            1.操作行内样式方法 (操作style属性)
+                设置和修改样式, 操作的是style属性
+                (1) 设置单个样式
+                    xx.css('属性名','属性值')
+                (2) 设置多个样式 (传入对象,注意:  属性名加或者不加引号都可以)
+                    xx.css({
+                        属性名1:'属性值1',
+                        "属性名2":'属性值2',
+                        ...
+                    })
+                (3) 获取行内样式
+                    xx.css('属性名')
+
+                特别注意: 
+                    设置属性名时, 遵循小驼峰命名规则, 不能出现 -字符
+                    获取属性值时, 属性名的规则, 要求是带 -字符的名
+
+
+
+                    
+     -->
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('#box').css('backgroundColor','red');
+
+            $('#con').css({
+                backgroundColor:"yellow",
+                fontSize:"30px",
+                "border":'1px solid green'
+            })
+
+            var st = $("#con").css("border")
+            console.log(st); //1px solid rgb(0, 128, 0)
+            console.log($('#box').css('background-color'));//rgb(255, 0, 0)
+        })
+    </script>
+</body>
+
+</html>

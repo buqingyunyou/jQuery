@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">我女朋友长的好看,你有女朋友嘛?</div>
+
+    <input type="submit">
+    <!-- 1.引入jQuery库 -->
+    <script src="./js/jquery-1.12.4.js"></script>
+
+    <!-- 2.jQuery入口函数 -->
+    <script>
+        /* 
+            $(函数):  表示当DOM节点全部加载完成后, 才会执行jQuery代码
+        */
+        $(function(){
+
+            /* 
+                $("选择器"):  表示选择DOM树中的元素, 返回jQuery对象, jQuery对象是一个伪数组,包裹DOM元素对象
+
+                xx.click():  表示jQuery对象, 调用click方法, 绑定点击事件
+                    -注意: .click()是个方法, [括号中] 定义function函数处理逻辑
+            */
+            $("input").click(function(){
+                alert("这是我的第一个jQuery程序");
+            })
+
+
+            /* 
+                点击#box元素, 将其文本内容修改
+                xx.text('....')
+            */
+            $('#box').click(function(){
+                $(this).text('jQuery就是厉害...');
+            })
+        })
+    </script>
+</body>
+</html>

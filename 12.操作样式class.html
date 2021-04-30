@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="box">1</div>
+
+        <div id="two" class="two">2</div>
+
+        <div id="three" class="three">3</div>
+
+        <div id="four">4</div>
+
+        <button id="btn">按钮</button>
+    </div>
+    <!-- 
+        jQuery操作class属性
+                (1) 添加class (注意函数的参数, 不需要带 .)
+                    $('#box').addClass('one');  //添加指定一个类名
+                    $('#box').addClass('one1 one2'); //同时添加多个类名
+
+                (2) 移除class
+                    $('#two').removeClass('two'); //移除指定类名
+                    $('#two').removeClass() //不传参时, 表示移除所有类名
+                    $('#two').removeClass('two1 two2');  //同时移除多个类名
+
+                (3) 判断是否存在指定class
+                    var b = $('#three').hasClass('three');
+
+                (4) 切换class (添加,移除,添加,移除,交换执行)
+                    -- 如果有该类名, 则移除
+                    -- 如果没有该类名, 则添加
+
+                    $("#four").toggle("active")
+     -->
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // 1.添加class
+            $("#box").addClass('one');
+
+            // 2.移除class
+            $('#two').removeClass('two');
+
+            // 3.判断是否存在指定class
+            var bo1 = $('#three').hasClass('three');
+            var bo2 = $('#two').hasClass('two');
+            console.log(bo1);  //true
+            console.log(bo2);  //false
+
+            // 4.切换class (一般是触发某个事件,控制另一个元素的展示和隐藏)
+            console.log($('#four').toggle("active"));
+            $('#btn').click(function(){
+                $('#four').toggle('active');
+            })
+        })
+    </script>
+</body>
+
+</html>

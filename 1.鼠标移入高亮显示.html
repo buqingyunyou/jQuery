@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li>我是li元素1</li>
+            <li>我是li元素2</li>
+            <li>我是li元素3</li>
+            <li>我是li元素4</li>
+            <li>我是li元素5</li>
+            <li>我是li元素6</li>
+            <li>我是li元素7</li>
+            <li>我是li元素8</li>
+        </ul>
+    </div>
+
+        <script src="/js/jquery-1.12.4.js"></script>
+        <script>
+            $("li").mouseenter(function(){
+                /* 
+                    注意css()设置行内样式, 以逗号隔开, 使用引号包裹
+                */
+                $(this).css('backgroundColor',"pink").siblings().css('backgroundColor',"")
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="one">
+        <div id="inner1">1内部div1</div>
+        <div id="inner2">1内部div2</div>
+        <span id="inner3">1内部span</span>
+        <span id="inner4">1内部span</span>
+    </div>
+    <div id="two">2</div>
+    <div id="three">3</div>
+    <div id="four">4</div>
+    <input type="text" class="ipt1">
+    <input type="text" class="ipt2">
+    <input type="text" class="myClass">
+    <!-- 
+        jQuery选择器分为四大类:
+            1.基本选择器
+            2.层级选择器
+            3.过滤选择器
+            4.表单选择器
+        
+        过滤选择器
+        1. $("div:first")  选取所有div元素中的第一个div元素 (返回单个元素)
+        2. $('div:last')   选取所有div元素中的最后一个div元素 (返回单个元素)
+        3. $('input:ont(.myClass)') 选取非选择器匹配的input元素 (返回元素集合)
+        4. $('input:even')  选取索引是偶数的所有元素    (返回元素集合)
+
+
+        10.$('div:nth-child(1)') 返回所有div元素下第一个子元素
+     -->
+    <script src="./js/jquery-1.12.4.js"></script>
+
+    <script>
+        $(function(){
+            // 1.获取所有div元素中的第一个div元素
+            console.log($('div:first')); //<div id='one'>..</div>
+            // 2.获取最后一个div元素
+            console.log($('div:last')); //<div id='four'></div>
+            // 3.获取非选择器匹配的元素
+            console.log($('input:not(.myClass)'));
+            // 4.返回索引是偶数的所有元素
+            console.log($('div:even'));//返回三个元素组成的集合, 包括所有层级
+            // 5.返回索引是奇数的所有元素
+            console.log($('input:odd')); //<input type="text" class="ipt2">
+
+            // 6.返回所有div元素集合中索引为1的元素,index从0开始计算 (返回单个元素)
+            console.log($('div:eq(1)')); //<div id="inner1">1内部div1</div>
+            // 7.返回所有div元素集合中索引大于1的元素,index从0开始计算 (返回元素集合)
+            console.log($('div:gt(1)')); //div#inner2, div#two, div#three, div#four
+            console.log($('div:lt(2)')); //div#one, div#inner1
+            console.log($(':header')); //如果没有就获取不到
+
+
+
+            console.log($('div:nth-child(1)')); //div#one, div#inner1
+            console.log($('div:nth-child(even)'));//div#inner2, div#two, div#four
+            console.log($('div:nth-child(odd)'));//div#one, div#inner1, div#three
+            // console.log($('div:'));
+        })
+    </script>
+</body>
+
+</html>

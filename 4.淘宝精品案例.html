@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper {
+            width: 298px;
+            height: 248px;
+            margin: 100px auto 0;
+            border: 1px solid pink;
+            overflow: hidden;
+        }
+
+        #left,
+        #center,
+        #right {
+            float: left;
+        }
+
+        #left li,
+        #right li {
+            background: url(./img1/lili.jpg) repeat-x;
+        }
+
+        #left li a,
+        #right li a {
+            display: block;
+            width: 48px;
+            height: 27px;
+            border-bottom: 1px solid pink;
+            line-height: 27px;
+            text-align: center;
+            color: black;
+        }
+
+        #left li a:hover,
+        #right li a:hover {
+            background-image: url(./img1/abg.gif);
+        }
+
+        #center {
+            border-left: 1px solid pink;
+            border-right: 1px solid pink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <ul id="left">
+            <li>
+                <a href="#">女靴</a>
+            </li>
+            <li>
+                <a href="#">雪地靴</a>
+            </li>
+            <li>
+                <a href="#">冬裙</a>
+            </li>
+            <li>
+                <a href="#">呢大衣</a>
+            </li>
+            <li>
+                <a href="#">毛衣</a>
+            </li>
+            <li>
+                <a href="#">棉服</a>
+            </li>
+            <li>
+                <a href="#">女裤</a>
+            </li>
+            <li>
+                <a href="#">羽绒服</a>
+            </li>
+            <li>
+                <a href="#">牛仔裤</a>
+            </li>
+        </ul>
+        <ul id="center">
+            <li>
+                <a href="#">
+                    <img src="./img1/女靴.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/雪地靴.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/冬裙.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/呢大衣.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/毛衣.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/棉服.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/女裤.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/羽绒服.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/牛仔裤.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/女包.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/男靴.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/登山鞋.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/皮带.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/围巾.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/皮衣.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/男毛衣.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/男棉服.jpg" width="200" height="250" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img1/男包.jpg" width="200" height="250" />
+                </a>
+            </li>
+
+        </ul>
+        <ul id="right">
+            <li>
+                <a href="#">女包</a>
+            </li>
+            <li>
+                <a href="#">男靴</a>
+            </li>
+            <li>
+                <a href="#">登山鞋</a>
+            </li>
+            <li>
+                <a href="#">皮带</a>
+            </li>
+            <li>
+                <a href="#">围巾</a>
+            </li>
+            <li>
+                <a href="#">皮衣</a>
+            </li>
+            <li>
+                <a href="#">男毛衣</a>
+            </li>
+            <li>
+                <a href="#">男棉服</a>
+            </li>
+            <li>
+                <a href="#">男包</a>
+            </li>
+        </ul>
+
+    </div>
+    <script src="./js/jquery-1.12.4.js"></script>
+
+    <script>
+        // 1.获取左右两边的li的jQuery对象
+        var $newLi = $("#left li,#right li");
+
+        // 2.给左右两边的li绑定鼠标移入事件 (隐式迭代绑定)
+        $newLi.mouseenter(function () {
+            // 3. 在事件处理函数中, 根据左右两边移入元素的index, 将中间对应index的li展示出来, 其他li隐藏
+            /* 
+                a.获取移入li的index:
+                    左边: 0-8,  对应0-8
+                    右边  0-8,  对应9-17
+                    因为左右两边操作不同, 需要分别进行判断,处理
+            */
+            var index = $(this).index();
+
+            // b.根据移入元素的父元素的id属性不同, 进行分别处理
+            if ($(this).parent()[0].id === "left") {
+                // 如果移入左边li, index完全相同, 直接可以共用
+                $("#center li").eq(index).show().siblings().hide();
+
+            } else if ($(this).parent()[0].id === "right")
+                // 如果移入右边li, 右边和中间的li的index正好全部相差9,转换一下即可
+                $("#center li").eq(index+9).show().siblings().hide();
+        })
+
+        /* 
+            xx.eq(1)   --> 获取指定下标的子元素
+            xx[0]      --> 将jQuery对象, 转DOM对象 (其实就是将JQuery对象中的DOM对象拿出来)
+            $(dom元素) --> 将dom元素, 转JQuery对象 (直接使用 $()方法即可)
+
+            xx.index() --> 获取当前JQuery对象在父元素中的下标位置
+        */
+    </script>
+</body>
+
+</html>

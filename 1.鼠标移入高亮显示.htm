@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li>我是li元素1</li>
+            <li>我是li元素2</li>
+            <li>我是li元素3</li>
+            <li>我是li元素4</li>
+            <li>我是li元素5</li>
+            <li>我是li元素6</li>
+            <li>我是li元素7</li>
+            <li>我是li元素8</li>
+        </ul>
+    </div>
+
+    <!-- 
+        需求: 当鼠标移入某个li元素时, 当前行高亮显示, 其他行正常显示
+     -->
+    <!-- 1.导包 -->
+    <script src="./js/jquery-1.12.4.js"></script>
+
+    <!-- 2.入口函数 -->
+    <script>
+        $(function(){
+            $('li').mouseenter(function(){
+                // 当前行高亮, 其他行正常
+                // console.log($(this)); //<li>我是li元素8</li> 包装
+                /* $(this).css("background","pink").siblings().css({
+                    background:'transparent'
+                }) */
+
+                $(this).css({background:'gray'}).siblings('li').css({background:'transparent'})
+            })
+        })
+    </script>
+</body>
+
+</html>

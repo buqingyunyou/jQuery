@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="outer">
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+    <!-- 1.引包 -->
+    <script src="./js/jquery-1.12.4.js"></script>
+    <!-- 2.入口函数 -->
+    <script>
+        $(function () {
+            /* 
+                (1) jQuery对象 --> DOM对象 ( xx[index] 或者 xx.get(index) )
+            */
+            console.log($('li')[0]); //<li>one</li>
+            console.log($('li').get(2)); //<li>three</li>
+
+
+            /* 
+                (2) DOM对象 --> jQuery对象 ( $(dom对象) )
+            */
+            var oUl = document.querySelector('#outer>ul');
+            var $Ul = $(oUl) //#Ul是一个jQuery对象
+            console.log(oUl, $Ul);//<ul>...</ul>  jQuery.fn.init(1)
+
+        })
+    </script>
+</body>
+
+</html>

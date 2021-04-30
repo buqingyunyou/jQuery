@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li id="first">1</li>
+        <li id="second">2</li>
+        <li>3</li>
+        <li>
+            <ul>
+                <li>a</li>
+                <li>b</li>
+                <li id="three">c</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- 
+        选择器与筛选方法的区别:
+            选择器,     $('#id')
+            筛选方法,   $('ul').childer('li')
+
+            1.选择器, 传入字符串
+            2.筛选方法, 是jQuery对象的方法, 功能类似于选择器 
+
+        筛选方法: --用于筛选元素
+            > (1) children('选择器')
+                查找所有的直接子元素
+
+            > (2) find('选择器')
+                查找指定的后代元素
+
+            > (3) siblings('选择器') -常用
+                查找所有兄弟元素, 不包括自身
+
+            > (4) parent() -常用
+                查找直接父元素
+
+            > (5) eq(index) -常用
+                查找元素集合中, 下标为index的元素
+
+            > (6) next() -常用
+                查找下一个兄弟元素
+
+            > (7) index() -常用
+                返回当前元素对应的索引
+
+            1.$('ul').children('li')
+                -返回ul元素的所有li子元素, 相当于$('ul>li')
+              $('ul').children()
+                -返回ul元素的所有子元素
+            2.$('ul').find('li')
+                -返回ul元素中所有li后代元素, 相当于$('ul li')
+     -->
+
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            console.log($('ul').children('li')); //li, li, li, li, li, li, li
+            console.log($('ul').find('li'));//li, li, li, li, li, li, li
+            console.log($('#first').siblings("li"));//li, li, li
+            console.log($('#first').parent());//ul
+            console.log($('li').eq(4));//<li>a</li>
+            console.log($('#first').next());//<li>2</li>
+
+
+
+            console.log($('#second').index()); //1 
+            console.log($('#three').index()); //2 (返回当前元素所在标签层级的下标)
+            console.log($('li').index()); //0 (如果存在jQuery对象存在多个元素, 则返回第一个的index值)
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .parentWrap {
+            width: 200px;
+            text-align: center;
+
+        }
+
+        .menuGroup {
+            border: 1px solid #999;
+            background-color: #e0ecff;
+        }
+
+        .groupTitle {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .menuGroup>div {
+            height: 200px;
+            background-color: #fff;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="parentWrap">
+        <li class="menuGroup">
+            <span class="groupTitle">标题1</span>
+            <div>我是弹出来的div1</div>
+        </li>
+        <li class="menuGroup">
+            <span class="groupTitle">标题2</span>
+            <div>我是弹出来的div2</div>
+        </li>
+        <li class="menuGroup">
+            <span class="groupTitle">标题3</span>
+            <div>我是弹出来的div3</div>
+        </li>
+        <li class="menuGroup">
+            <span class="groupTitle">标题4</span>
+            <div>我是弹出来的div4</div>
+        </li>
+    </ul>
+    <!-- 1.引包 -->
+    <script src="js/jquery-1.12.4.js"></script>
+    <!-- 2.使用jQuery -->
+    <script>
+        // 1.获取所有span元素 $("span")
+        // 2.给所有span元素绑定点击事件 xx.click()
+        $("span").click(function(){
+            // 3.在事件处理函数中,获取span的兄弟元素div,设置为display:block
+            // 4.将其他div设置为display:none
+            $(this).next().show().parent().siblings().find("div").hide();
+
+            /* 
+                xx.show()  -->将对应dom元素设置为 display:block
+                xx.hide()  -->将对应dom元素设置为 diplay:none
+            */
+
+            /* 
+                xx.next()     找下一个兄弟元素
+                xx.parent()   找父元素
+                xx.siblings() 找所有兄弟元素
+                xx.find("xx") 找指定子元素
+
+            */
+        })
+    </script>
+</body>
+
+</html>

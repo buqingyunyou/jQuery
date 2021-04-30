@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            margin:0px 10px 0px 0px;
+        }
+        .one{
+            border:1px solid red;
+        }
+        .two{
+            border:1px solid green;
+        }
+        .three{
+            border:1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        迭代: 循环
+        jQuery隐式迭代: 
+            - 原因: jQuery对象中是一个伪数组对象, 通过选择器选取的元素, 不一定是单个元素, 可能是符合条件的多个元素
+            - 过程: 给jQuery对象绑定事件, 或者设置样式时, 会给该jQuery对象中的每个元素, 迭代绑定,迭代设置相同的css样式
+
+        通过jQuery获取css样式时, 返回的是第一个DOM元素的css样式
+            - 原因: jQuery对象中可能保存多个dom元素, 每个dom元素相同的属性对应的属性值可能不一样, 所以只返回第一个DOM元素的css样式 
+
+     -->
+
+    <!-- 
+         需求: 现在我们有三个盒子,背景默认是透明的.我们现在想要给他们三个都设置黄色的背景颜色
+      -->
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            /* $('div').css({
+                background:"yellow"
+            }) */
+            /* 
+                通过标签名, 同时选中多个元素
+            */
+            $('div').css('backgroundColor','yellow');
+        })
+    </script>
+</body>
+
+</html>
